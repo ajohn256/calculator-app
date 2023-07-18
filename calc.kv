@@ -1,0 +1,215 @@
+Screen:
+    name:"main"
+    BoxLayout:
+        orientation:'vertical'
+       
+        MDTextField:
+            padding:[20]
+            id:input
+            size_hint_x:1
+            size_hint_y:0.4
+            readonly:True
+            multiline:True
+            font_size:40
+
+        
+        StackLayout:
+            padding:"12dp"
+            spacing:"12dp"
+            MDFlatButton:
+                id:zero
+                text:"0"
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.insert_text(zero.text)
+            
+
+            MDFlatButton:
+                id:one
+                text:"1"
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.insert_text(one.text)
+            
+            MDFlatButton:
+                id:two
+                text:"2"
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.insert_text(two.text)
+            MDFlatButton:
+                id:three
+                text:"3"
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.insert_text(three.text)
+            MDFlatButton:
+                id:four
+                text:"4"
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.insert_text(four.text)
+            
+            MDFlatButton:
+                id:five
+                text:"5"
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.insert_text(five.text)
+            
+            MDFlatButton:
+                id:six
+                text:"6"
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.insert_text(six.text)
+            MDFlatButton:
+                id:seven
+                text:"7"
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.insert_text(seven.text)
+            MDFlatButton:
+                id:eight
+                text:"8"
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.insert_text(eight.text)
+            
+            MDFlatButton:
+                id:nine
+                text:"9"
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.insert_text(nine.text)
+
+            MDFlatButton:
+                id:add
+                text:"+"
+                # size_hint:0.2,0.15
+                font_size:65
+                theme_text_color:"Custom"
+                text_color:(255/255,217/255,179/255,1)
+                on_press:app.insert_text(add.text)
+            
+            MDFlatButton:
+                id:sub
+                text:"-"
+                # size_hint:0.2,0.15
+                font_size:65
+                theme_text_color:"Custom"
+                text_color:(255/255,217/255,179/255,1)
+                on_press:app.insert_text(sub.text)
+            
+            MDFlatButton:
+                id:div
+                text:"/"
+                # size_hint:0.2,0.15
+                font_size:65
+                theme_text_color:"Custom"
+                text_color:(255/255,217/255,179/255,1)
+                on_press:app.insert_text(div.text)
+            
+            MDFlatButton:
+                id:mult
+                text:"*"
+                # size_hint:0.2,0.15
+                font_size:65
+                theme_text_color:"Custom"
+                text_color:(255/255,217/255,179/255,1)
+                on_press:app.insert_text(mult.text)
+            
+            MDFlatButton:
+                id:log
+                text:"00"
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.insert_text(log.text)
+                background_color:(125/255,125/255,125/255,1)
+            
+            MDFlatButton:
+                id:cos
+                text:"."
+                # size_hint:0.2,0.15
+                font_size:65
+                theme_text_color:"Custom"
+                text_color:(255/255,217/255,179/255,1)
+                on_press:app.insert_text(cos.text)
+                background_color:(125/255,125/255,125/255,1)
+            
+            MDFlatButton:
+                id:tan
+                text:"000"
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.insert_text(tan.text)
+                background_color:(125/255,125/255,125/255,1)
+            
+            MDFlatButton:
+                id:sin
+                text:"e"
+                # size_hint:0.2,0.15
+                font_size:65
+                theme_text_color:"Custom"
+                text_color:(255/255,217/255,179/255,1)
+                on_press:app.insert_text(sin.text)
+                background_color:(125/255,125/255,125/255,1)
+            
+            MDFlatButton:
+                id:brac1
+                text:"("
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.insert_text(brac1.text)
+                background_color:(125/255,125/255,125/255,1)
+            
+            MDFlatButton:
+                id:brac2
+                text:")"
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.insert_text(brac2.text)
+                background_color:(125/255,125/255,125/255,1)
+            
+            MDFlatButton:
+                id:equal
+                text:"="
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.compute_input()
+                md_bg_color:(65/255,128/255,19/255,1)
+            
+            MDFlatButton:
+                id:del
+                text:"Del"
+                # size_hint:0.6,0.15
+                font_size:65
+                on_press:app.del_char()
+                background_color:(125/255,125/255,125/255,1)
+            
+            MDIconButton:
+                id:hist
+                # text:"Rev"
+                icon:"undo"
+                # size_hint:0.2,0.15
+                font_size:65
+                on_press:app.revert()
+                theme_text_color:"Custom"
+                md_bg_color:(255/255,102/255,28/255,1)
+
+            
+            MDFlatButton:
+                id:clear
+                text:"Cls"
+                # size_hint:1,0.15
+                font_size:65
+                on_press:app.clear_input()
+                md_bg_color:(125/255,125/255,125/255,1)
+            
+            
+
+
+
+
+
+
